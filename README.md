@@ -1,12 +1,5 @@
 # plants-api
 
-## Daftar Isi
-
-- [Petunjuk Instalasi](#petunjuk-instalasi)
-- [Menjalankan Aplikasi](#menjalankan-aplikasi)
-- [Variabel Lingkungan](#variabel-lingkungan)
-- [Catatan Penting](#catatan-penting)
-
 ## Petunjuk Instalasi
 
 1. **Clone Repositori:**
@@ -21,6 +14,6 @@
    PORT=3000
    HOST=localhost
    MONGODB_URI=mongodb://localhost:27017/nama_database
-2. **Install Dependensi:**
+2. **Jalankan Aplikasi**
    ```bash
-   npm install
+   npm run start

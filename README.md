@@ -11,4 +11,4 @@
 
 1. **Clone Repositori:**
    ```bash
-   [git clone [https://github.com/nama-user/repositori-aplikasi.git](https://github.com/0xfaqih/plants-api.git)https://github.com/0xfaqih/plants-api.git
+   git clone https://github.com/0xfaqih/plants-api.git

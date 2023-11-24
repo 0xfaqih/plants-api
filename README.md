@@ -15,7 +15,7 @@
 2. **Install Dependensi:**
    ```bash
    npm install
-3. **Buat File .env:**
+3. **Buat File .env,**
    ex:
    ```
    PORT=3000

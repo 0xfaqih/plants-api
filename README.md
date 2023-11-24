@@ -17,9 +17,9 @@
    npm install
 3. **Buat File .env:**
    ex:
-   `PORT=3000`
-   `HOST=localhost`
-   `MONGODB_URI=mongodb://localhost:27017/nama_database`
+   ```PORT=3000
+   HOST=localhost
+   MONGODB_URI=mongodb://localhost:27017/nama_database```
 2. **Install Dependensi:**
    ```bash
    npm install

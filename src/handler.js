@@ -55,6 +55,7 @@ const getAllPlantsHandler = async (request, h) => {
      const allPlants = await Plant.find();
  
      const simplifiedPlants = allPlants.map(plant => ({
+       id: plant.id,
        common_name: plant.common_name,
        scientific_name: plant.scientific_name,
        image: plant.image
@@ -79,9 +80,43 @@ const getAllPlantsHandler = async (request, h) => {
    }
  };
  
+ const getPlantByIdHandler = async (request, h) => {
+   try {
+     const plantId = request.params.id;
+     const plantDetail = await Plant.findOne({ id: plantId });
+ 
+     if (!plantDetail) {
+       const notFoundResponse = h.response({
+         status: 'fail',
+         message: 'Tanaman tidak ditemukan',
+       }).code(404);
+ 
+       return notFoundResponse;
+     }
+ 
+     const response = h.response({
+       status: 'success',
+       message: 'Berhasil mendapatkan detail tanaman',
+       data: {
+         plant: plantDetail
+       },
+     }).code(200);
+ 
+     return response;
+   } catch (error) {
+     const response = h.response({
+       status: 'fail',
+       message: `Gagal mendapatkan detail tanaman. Alasan: ${error.message}`,
+     }).code(500);
+ 
+     return response;
+   }
+ };
+ 
  
 
 module.exports = {
    addPlantHandler,
-   getAllPlantsHandler
+   getAllPlantsHandler,
+   getPlantByIdHandler
 };

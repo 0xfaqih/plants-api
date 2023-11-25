@@ -54,11 +54,17 @@ const getAllPlantsHandler = async (request, h) => {
    try {
      const allPlants = await Plant.find();
  
+     const simplifiedPlants = allPlants.map(plant => ({
+       common_name: plant.common_name,
+       scientific_name: plant.scientific_name,
+       image: plant.image
+     }));
+ 
      const response = h.response({
        status: 'success',
        message: 'Berhasil mendapatkan semua tanaman',
        data: {
-         plants: allPlants,
+         plants: simplifiedPlants,
        },
      }).code(200);
  
@@ -72,6 +78,7 @@ const getAllPlantsHandler = async (request, h) => {
      return response;
    }
  };
+ 
  
 
 module.exports = {

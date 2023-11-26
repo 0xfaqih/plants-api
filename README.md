@@ -1,7 +1,7 @@
-# Document provides information on the API endpoints
+# Information on the API endpoints
 
 ## Base URL
-The base URL for all endpoints is: https://api.example.com
+The base URL for all endpoints is: https://api.abdulfaqih.eu.org/
 
 ### Add a plant
 | Endpoint      | Method        | Content Type    |

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const plantSchema = new mongoose.Schema({
   common_name: {
@@ -73,4 +73,4 @@ const plantSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Plant", plantSchema);
+module.exports = mongoose.model('Plant', plantSchema);

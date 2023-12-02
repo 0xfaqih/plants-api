@@ -3,33 +3,20 @@ const Plant = require('./models');
 const addPlantHandler = async (request, h) => {
   try {
     const {
-      common_name, scientific_name, cycle, propagation, sunlight,
-      pruning_month, care_guides, growth_rate, thorny, invasive,
-      tropical, indoor, care_level, flowers, fruits, leaf,
-      leaf_color, cuisine, medicinal, description, image,
+      common_name, scientific_name, place, sunlight,
+      growth, care_level, management, description, benefits, image,
     } = request.payload;
 
     const newPlant = new Plant({
       common_name,
       scientific_name,
-      cycle,
-      propagation,
+      place,
       sunlight,
-      pruning_month,
-      care_guides,
-      growth_rate,
-      thorny,
-      invasive,
-      tropical,
-      indoor,
+      growth,
       care_level,
-      flowers,
-      fruits,
-      leaf,
-      leaf_color,
-      cuisine,
-      medicinal,
+      management,
       description,
+      benefits,
       image,
     });
 

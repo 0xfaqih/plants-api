@@ -26,7 +26,14 @@ const plantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: String,
+  description: {
+    type: String,
+    required: true,
+  },
+  benefits: {
+    type: String,
+    required: true,
+  },
   image: {
     regular_url: String,
     medium_url: String,

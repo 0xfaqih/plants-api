@@ -6,11 +6,10 @@ const plantSchema = new mongoose.Schema({
     required: true,
   },
   scientific_name: {
-    type: [String],
+    type: String,
     required: true,
   },
-  cycle: String,
-  propagation: {
+  place: {
     type: [String],
     required: true,
   },
@@ -18,52 +17,14 @@ const plantSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
-  pruning_month: {
-    type: [String],
-    default: [],
-  },
-  care_guides: String,
-  growth_rate: String,
-  thorny: {
-    type: Boolean,
-    default: false,
-  },
-  invasive: {
-    type: Boolean,
-    default: false,
-  },
-  tropical: {
-    type: Boolean,
-    default: false,
-  },
-  indoor: {
-    type: Boolean,
-    default: false,
+  growth: {
+    type: String,
+    required: true,
   },
   care_level: String,
-  flowers: {
-    type: Boolean,
-    default: false,
-  },
-  fruits: {
-    type: Boolean,
-    default: false,
-  },
-  leaf: {
-    type: Boolean,
-    default: false,
-  },
-  leaf_color: {
-    type: [String],
-    default: [],
-  },
-  cuisine: {
-    type: Boolean,
-    default: false,
-  },
-  medicinal: {
-    type: Boolean,
-    default: false,
+  management: {
+    type: String,
+    required: true,
   },
   description: String,
   image: {

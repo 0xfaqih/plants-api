@@ -73,8 +73,8 @@ const getAllPlantsHandler = async (request, h) => {
 
 const getPlantByIdHandler = async (request, h) => {
   try {
-    const plantId = request.params.id;
-    const plantDetail = await Plant.findOne({ id: plantId });
+    const plantId = request.params.plantId;
+    const plantDetail = await Plant.findOne({ _id: plantId });
 
     if (!plantDetail) {
       const notFoundResponse = h.response({

@@ -17,6 +17,11 @@ mongoose
 const server = Hapi.server({
   port: process.env.PORT,
   host: process.env.HOST,
+  routes: {
+    cors: {
+      origin: ['*'],
+    },
+  },
 });
 
 server.route(routes);

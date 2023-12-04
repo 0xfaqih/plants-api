@@ -4,7 +4,7 @@ const addPlantHandler = async (request, h) => {
   try {
     const {
       common_name, scientific_name, place, sunlight,
-      growth, care_level, management, description, benefits, image,
+      growth, care_level, management, description, manage_type, image,
     } = request.payload;
 
     const newPlant = new Plant({
@@ -16,7 +16,7 @@ const addPlantHandler = async (request, h) => {
       care_level,
       management,
       description,
-      benefits,
+      manage_type,
       image,
     });
 

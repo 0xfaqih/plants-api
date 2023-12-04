@@ -30,7 +30,7 @@ const plantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  benefits: {
+  manage_type: {
     type: String,
     required: true,
   },

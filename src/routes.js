@@ -8,7 +8,7 @@ const routes = [
   },
   {
     method: 'GET',
-    path: '/plants',
+    path: '/plant',
     handler: getAllPlantsHandler,
   },
   {

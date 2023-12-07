@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <a href="plant-list.html">list Tanaman</a>
+   <br>
+   <hr>
+<form id="plantForm">
+   <label for="commonName">Common Name:</label>
+   <input type="text" id="commonName" name="commonName" required><br>
+
+   <label for="scientificName">Scientific Name:</label>
+   <input type="text" id="scientificName" name="scientificName" required><br>
+
+   <label for="place">Tempat:</label>
+   <select id="place" name="place" required>
+       <option value="Indoor">Indoor</option>
+       <option value="Outdoor">Outdoor</option>
+   </select><br>
+
+   <label for="sunlight">Matahari :</label>
+   <select id="sunlight" name="sunlight" required>
+     <option value="Teduh">Teduh</option>
+     <option value="Sedang">Sedang</option>
+     <option value="Terik">Terik</option>
+  </select><br>
+
+   <label for="growth">Pertumbuhan:</label>
+   <select id="growth" name="growth" required>
+     <option value="Lambat">Lambat</option>
+     <option value="Cepat">Cepat</option>
+  </select><br>
+
+   <label for="careLevel">Perawatan:</label>
+   <select id="careLevel" name="careLevel" required>
+     <option value="Mudah">Mudah</option>
+     <option value="Sedang">Sedang</option>
+     <option value="Susah">Susah</option>
+ </select><br>
+
+   <label for="management">Tipe Kelola:</label>
+   <select id="management" name="management" required>
+     <option value="Aquaponik">Aquaponik</option>
+     <option value="Hidroponik">Hidroponik</option>
+     <option value="Vertikultur">Vertikultur</option>
+     <option value="Vertikal Garden">Vertikal Garden</option>
+     <option value="Rooftop Farming">Rooftop Farming</option>
+ </select><br>
+
+   <label for="description">Deskripsi:</label>
+   <textarea id="description" name="description" rows="4" required></textarea><br>
+
+   <label for="manage_type">Tipe Kelola:</label>
+   <textarea id="manage_type" name="manage_type" rows="4" required></textarea><br>
+
+   <label for="regularUrl">Regular Image URL:</label>
+   <input type="text" id="regularUrl" name="regularUrl" required><br>
+
+   <label for="mediumUrl">Medium Image URL:</label>
+   <input type="text" id="mediumUrl" name="mediumUrl" required><br>
+
+   <label for="smallUrl">Small Image URL:</label>
+   <input type="text" id="smallUrl" name="smallUrl" required><br>
+
+   <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<div id="successMessage" style="display: none; color: green;">
+   <h1>Sukses!</h1>
+</div>
+
+<div id="errorMessage" style="display: none; color: red;">
+   <h1>Gagal</h1>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

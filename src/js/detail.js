@@ -1,22 +1,22 @@
 async function fetchPlantDetail() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const plantId = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const plantId = urlParams.get('id');
 
-    try {
-        const response = await fetch(`https://api.abdulfaqih.eu.org/plant/${plantId}`);
-        const plantDetail = await response.json();
+  try {
+    const response = await fetch(`https://api.abdulfaqih.eu.org/plant/${plantId}`);
+    const plantDetail = await response.json();
 
-        displayPlantDetail(plantDetail.data.plant);
-    } catch (error) {
-        console.error('Error fetching plant detail:', error);
-    }
+    displayPlantDetail(plantDetail.data.plant);
+  } catch (error) {
+    console.error('Error fetching plant detail:', error);
+  }
 }
 
 function displayPlantDetail(plant) {
-    const plantDetailElement = document.getElementById('plantDetail');
+  const plantDetailElement = document.getElementById('plantDetail');
 
-    if (plant) {
-        const detailHTML = `
+  if (plant) {
+    const detailHTML = `
             <div class="detail-container mx-auto">
                 <div class="detail-inner">
                     <div class="detail-inner-title">
@@ -64,9 +64,9 @@ function displayPlantDetail(plant) {
                 </div>
             <!-- Add more details as needed -->
             `;
-        plantDetailElement.innerHTML = detailHTML;
-    } else {
-        plantDetailElement.innerHTML = '<p>Plant not found.</p>';
-    }
+    plantDetailElement.innerHTML = detailHTML;
+  } else {
+    plantDetailElement.innerHTML = '<p>Plant not found.</p>';
+  }
 }
 window.onload = fetchPlantDetail;

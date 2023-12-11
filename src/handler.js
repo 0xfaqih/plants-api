@@ -47,6 +47,7 @@ const getAllArticleHandler = async (request, h) => {
       id: article.id,
       content: article.content,
       title: article.title,
+      tag: article.tag,
       date: article.date,
       image: article.image,
     }));

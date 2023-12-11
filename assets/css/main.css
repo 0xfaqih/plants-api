@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #0c4b36;
+    --secondary-color: #fbbc05;
+    --background-color: rgba(233, 238, 207, 0.30);
+    --white-color: #ffffff;
+    --black-color: #000000;
+
+    --font-display: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body,
+button {
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none; 
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img,
+.ic {
+    width: 100%;
+}
+
+.text-primary {
+    color: #0c4b36 !important;
+}
+.text-secondary {
+    color: #fbbc05;
+}
+
+.active  {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+    border-radius: 10px !important;
+}
+
+
+/* Button */
+.btn {
+    color: #fff;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    padding: 16px 54px;
+    border-radius: 8px;
+    color: var(--white-color);
+}
+
+.short {
+    padding: 15px 20px;
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-color);
+    text-decoration: none;
+    gap: 14px;
+}
+
+.btn-link:hover, .btn-link:active {
+    color: #0c4b36 !important;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-secondary:hover, .btn-secondary:active {
+    background-color: transparent !important;
+    outline: 1px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+

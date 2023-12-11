@@ -1,0 +1,24 @@
+.section-sidebar {
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    width: 150px;
+    height: 100vh;
+    min-height: 1350px;
+    background: var(--background-color);
+}
+.section-sidebar .ic {
+    font-size: 64px;
+    max-width: 64px;
+    color: var(--primary-color);
+
+    position: relative;
+    margin: 30px;
+}
+
+.section-sidebar .ic:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 10px;
+}
+

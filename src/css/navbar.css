@@ -1,0 +1,20 @@
+.navbar {
+    padding-block: 0 !important;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 99;
+}
+
+.navbar .container {
+    padding-block: 24px;
+    position: relative;
+}
+
+.scrolled {
+    background-color: var(--white-color);
+}
+
+.navbar .navbar-brand {
+    max-width: 204px;
+}

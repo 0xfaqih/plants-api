@@ -2,7 +2,7 @@
 function submitForm() {
   const formData = {
     title: document.getElementById('title').value,
-    content: document.getElementById('content').value,
+    content: document.getElementById('description').value,
     date: document.getElementById('dateArticle').value,
     author: document.getElementById('author').value,
     tag: document.getElementById('tag').value,

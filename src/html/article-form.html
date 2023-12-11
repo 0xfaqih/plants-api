@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/src/css/navbar.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/src/css/form.css" />
+    <link rel="stylesheet" href="/src/css/form-article.css" />
     <link rel="stylesheet" href="/src/css/sidebar.css" />
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +36,7 @@
       <aside class="section-sidebar col-md-3">
         <div class="container">
           <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
-          <a href="#"><i class="ic card-icon material-symbols-outlined">article</i></a>
+          <a href="article-list.html"><i class="ic card-icon material-symbols-outlined">article</i></a>
         </div>
       </aside>
       <!-- End of SideBar -->
@@ -47,56 +47,44 @@
       <section class="section-content d-flex">
         <div class="container col-md-9">
           <h1 class="form-title">Form Artikel</h1>
+          
+          <form id="articleForm">
 
-          <form id="articleForm" onsubmit="submitForm(); return false;">
-            <!-- article-title -->
-            <div class="name-item">
-              <label for="title">Judul Artikel</label>
-              <input type="text" id="title" name="title" required="" />
+            <div class="article-content mt-5">
+              <div class="content-name">
+                <label for="title">Judul Artikel</label>
+                <input type="text" id="title" name="title" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="dateArticle">Tanggal Artikel</label>
+                <input type="date" id="dateArticle" name="dateArticle" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="author">Penulis Artikel</label>
+                <input type="text" id="author" name="author" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="tag">Tag Artikel</label>
+                <input type="text" id="tag" name="tag" required="" />
+              </div>
+
+              <div class="content-image">
+                <label for="umageUrl">Regular Image URL</label>
+                <input type="url" id="imageUrl" name="imageUrl" required="" />
+              </div>
             </div>
-            <!-- article title -->
 
-            <!-- article-content -->
-            <div class="desc-item">
+            <div class="desc-item mt-5">
               <label for="content">Konten Artikel</label>
               <textarea id="description" name="content" rows="4" required=""></textarea>
             </div>
-            <!-- article-content -->
+          </form><br>
 
-            <!-- article-date -->
-            <div class="name-item">
-              <label for="dateArticle">Konten Artikel</label>
-              <input type="date" id="dateArticle" name="dateArticle" required="" />
-            </div>
-            <!-- article-date -->
+          <button type="button" onclick="submitForm()" class="btn-primary">Submit</button><br>
 
-            <!-- article-author -->
-            <div class="name-item">
-              <label for="author">Penulis Artikel</label>
-              <input type="text" id="author" name="author" required="" />
-            </div>
-            <!-- article author -->
-
-            <!-- article-tags -->
-            <div class="name-item">
-              <label for="tag">Tag Artikel</label>
-              <input type="text" id="tag" name="tag" required="" />
-            </div>
-            <!-- article tags -->
-
-            <!-- title content date author tag image -->
-
-            <!-- Content-Image -->
-            <div class="image-item">
-              <label for="umageUrl">Regular Image URL</label>
-              <input type="url" id="imageUrl" name="imageUrl" required="" />
-            </div>
-            <!-- End of Content-Image -->
-          </form>
-          <br />
-
-          <button type="button" onclick="submitForm()" class="btn-primary">Submit</button>
-          <br />
           <div id="successMessage" style="display: none; color: var(--primary-color)" class="mt-3">
             <h1>Sukses!</h1>
           </div>

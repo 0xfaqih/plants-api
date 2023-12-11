@@ -3,7 +3,7 @@ async function fetchPlantDetail() {
     const plantId = urlParams.get('id');
 
     try {
-        const response = await fetch(`https://api.abdulfaqih.eu.org/plant/${plantId}`);
+        const response = await fetch(`http://api-gh.abdulfaqih.eu.org:9090/plant/${plantId}`);
         const plantDetail = await response.json();
 
         displayPlantDetail(plantDetail.data.plant);

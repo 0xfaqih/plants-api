@@ -1,6 +1,6 @@
 async function fetchPlantData() {
     try {
-        const response = await fetch('https://api.abdulfaqih.eu.org/plant');
+        const response = await fetch('http://api-gh.abdulfaqih.eu.org:9090/plant');
         const plantData = await response.json();
 
         displayPlantList(plantData);

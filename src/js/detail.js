@@ -35,6 +35,10 @@ function displayPlantDetail(plant) {
                             </div>
                             <div class="card-body-text d-flex flex-row p-2">
                             <img src="../../assets/image/ic-plant.svg">
+                            <p class="my-auto mx-3">${plant.watering}</p>
+                            </div>
+                            <div class="card-body-text d-flex flex-row p-2">
+                            <img src="../../assets/image/ic-plant.svg">
                             <p class="my-auto mx-3">${plant.growth}</p>
                             </div>
                             <div class="card-body-text d-flex flex-row p-2">

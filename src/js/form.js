@@ -5,6 +5,7 @@ function submitForm() {
     scientific_name: document.getElementById('scientificName').value,
     place: document.getElementById('place').value,
     sunlight: document.getElementById('sunlight').value,
+    watering: document.getElementById('watering').value,
     growth: document.getElementById('growth').value,
     care_level: document.getElementById('careLevel').value,
     management: document.getElementById('management').value,

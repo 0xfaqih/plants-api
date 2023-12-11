@@ -1,7 +1,7 @@
 # Information on the API endpoints
 
 ## Base URL
-The base URL for all endpoints is: https://api.abdulfaqih.eu.org/
+The base URL for all endpoints is: https://apiplant.abdulfaqih.eu.org/
 
 ### Add a plant
 | Endpoint      | Method        | Content Type    |
@@ -15,19 +15,26 @@ Response:
     "message": "Tanaman berhasil ditambahkan",
     "data": {
         "plant": {
-            "common_name": "Nama Umum Tanaman",
-            "scientific_name": [
-                "Nama Ilmiah Tanaman"
+            "common_name": "Tanaman Laba-Laba",
+            "scientific_name": "Chlorophytum 'Bonnie'",
+            "place": [
+                "indoors"
             ],
-            "cycle": "Perennial",
-            "propagation": [
-                "Cutting",
-                "Grafting Propagation",
-                "Layering Propagation",
-                "Seed Propagation",
-                "Air Layering Propagation",
-                "Tissue Culture"
-            ...
+            "sunlight": [
+                "redup"
+            ],
+            "growth": "tinggi",
+            "care_level": "Sedang",
+            "management": "Sedang",
+            "description": "Spider Plant (Chlorophytum 'Bonnie') adalah tanaman hias yang sangat serbaguna dan perawatannya rendah. Tanaman ini tahan terhadap cahaya tidak langsung rendah hingga terang dan hampir semua jenis tanah. Pola pertumbuhannya yang tidak biasa menyerupai laba-laba atau roset dedaunan seperti tali yang menyebar dari batang tengah. Bunganya yang berwarna putih berujung merah akan muncul seiring berjalannya waktu. Ini adalah tanaman hias pemula yang sempurna karena mudah tumbuh dan berkembang biak, membutuhkan sedikit perawatan, dan dapat bertahan hidup di berbagai lingkungan. Bahkan bisa ditanam di luar ruangan di zona 11 dan 12! Secara keseluruhan, Spider Plant adalah tambahan yang menyenangkan dan tahan lama untuk taman rumah mana pun.",
+            "manage_type": "Spider Plant sering digunakan sebagai tanaman hias dalam ruangan karena daun-daunnya yang panjang dan ramping, serta pola uniknya yang membuatnya menarik secara visual. Tanaman ini dapat memberikan sentuhan hijau dan kesegaran pada dekorasi dalam ruangan.",
+            "image": {
+                "regular_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/regular/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/medium/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "small_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/small/Chlorophytum_comosum_Variegatum_1zz.jpg"
+            },
+            "_id": "65771c3c5388056244e02eb2",
+            "__v": 0
         }
     }
 }
@@ -46,29 +53,16 @@ Response:
     "data": {
         "plants": [
             {
-                "id": "656286fb6327d9b964c025eb",
-                "common_name": "NamaUmumTanaman",
-                "scientific_name": [
-                    "Nama Ilmiah Tanaman"
-                ],
+                "id": "65760ad0342b663fd5ed2356",
+                "common_name": "Begonia Lilin",
+                "scientific_name": "Begonia Semperflorens-Cultorum 'Harmoni Scarlet'",
                 "image": {
-                    "regular_url": "URL Regular",
-                    "medium_url": "URL Medium",
-                    "small_url": "URL Small"
+                    "regular_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/regular/52423452233_02b4dc198b_b.jpg",
+                    "medium_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/medium/52423452233_02b4dc198b_b.jpg",
+                    "small_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/small/52423452233_02b4dc198b_b.jpg"
                 }
             },
-            {
-                "id": "65631bbf998486cfc27fc167",
-                "common_name": "Nama Umum Tanaman",
-                "scientific_name": [
-                    "Nama Ilmiah Tanaman"
-                ],
-                "image": {
-                    "regular_url": "URL Regular",
-                    "medium_url": "URL Medium",
-                    "small_url": "URL Small"
-                }
-            }
+            ...
         ]
     }
 }
@@ -87,15 +81,22 @@ Response:
     "data": {
         "plant": {
             "image": {
-                "regular_url": "URL Regular",
-                "medium_url": "URL Medium",
-                "small_url": "URL Small"
+                "regular_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/regular/52423452233_02b4dc198b_b.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/medium/52423452233_02b4dc198b_b.jpg",
+                "small_url": "https://perenual.com/storage/species_image/1219_begonia_semperflorens-cultorum_harmony_scarlet/small/52423452233_02b4dc198b_b.jpg"
             },
-            "_id": "656286fb6327d9b964c025eb",
-            "common_name": "NamaUmumTanaman",
-            "scientific_name": [
-                "Nama Ilmiah Tanaman"
+            "_id": "65760ad0342b663fd5ed2356",
+            "common_name": "Begonia Lilin",
+            "scientific_name": "Begonia Semperflorens-Cultorum 'Harmoni Scarlet'",
+            "place": [
+                "Indoor"
             ],
+            "sunlight": [
+                "Teduh"
+            ],
+            "growth": "Lambat",
+            "care_level": "Sedang",
+            "management": "Vertikal Garden",
             ...
         }
     }

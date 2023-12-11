@@ -17,7 +17,7 @@ function submitForm() {
     },
   };
 
-  const apiUrl = 'https://api.abdulfaqih.eu.org/plant';
+  const apiUrl = 'https://apiplant.abdulfaqih.eu.org/plant';
 
   fetch(apiUrl, {
     method: 'POST',

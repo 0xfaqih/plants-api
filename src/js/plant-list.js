@@ -1,6 +1,6 @@
 async function fetchPlantData() {
     try {
-        const response = await fetch('http://47.245.87.80:9090/plant');
+        const response = await fetch('https://apiplant.abdulfaqih.eu.org/plant');
         const plantData = await response.json();
 
         displayPlantList(plantData);

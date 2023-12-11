@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/src/css/navbar.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/src/css/sidebar.css" />
-    <link rel="stylesheet" href="/src/css/plant-list.css" />
+    <link rel="stylesheet" href="/src/css/detail.css" />
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,6 @@
     <!-- Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
-
   <body>
     <header>
       <!-- Navbar -->
@@ -36,28 +35,24 @@
       <aside class="section-sidebar col-md-3">
         <div class="container">
           <a href="plant-list.html"><i class="ic active card-icon material-symbols-outlined">potted_plant</i></a>
-          <a href="article-list.html"><i class="ic card-icon material-symbols-outlined">article</i></a>
+          <a href="#"><i class="ic card-icon material-symbols-outlined">article</i></a>
         </div>
       </aside>
       <!-- End of SideBar -->
     </header>
-
     <main>
-      <!-- Content -->
-      <section class="section-content d-flex">
-        <div class="container col-md-9" id="">
+      <section class="section-detail d-flex">
+        <div class="container col-md-9">
           <div class="head-title mb-4">
-            <h1 class="title">List Tumbuhan</h1>
-            <a href="form.html" class="btn-primary">Buat</a>
+            <h1 class="title">Detail Artikel</h1>
+            <a href="article-list.html" class="btn-primary">Kembali</a>
           </div>
-          <div class="content">
-            <ul class="content-item" id="plantList">
-              <!-- Plant List -->
-            </ul>
+          <div id="articleDetail">
+            <!-- detail plant -->
           </div>
         </div>
       </section>
     </main>
-    <script src="/src/js/plant-list.js"></script>
   </body>
+  <script src="/src/js/article-detail.js"></script>
 </html>

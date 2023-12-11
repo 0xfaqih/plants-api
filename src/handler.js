@@ -3,7 +3,7 @@ const Plant = require('./models');
 const addPlantHandler = async (request, h) => {
   try {
     const {
-      common_name, scientific_name, place, sunlight,
+      common_name, scientific_name, place, sunlight, watering,
       growth, care_level, management, description, manage_type, image,
     } = request.payload;
 
@@ -12,6 +12,7 @@ const addPlantHandler = async (request, h) => {
       scientific_name,
       place,
       sunlight,
+      watering,
       growth,
       care_level,
       management,

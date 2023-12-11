@@ -13,6 +13,10 @@ const plantSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  watering: {
+    type: String,
+    required: true,
+  },
   sunlight: {
     type: [String],
     required: true,

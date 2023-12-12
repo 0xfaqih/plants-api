@@ -1,4 +1,6 @@
-const { addPlantHandler, getAllPlantsHandler, getPlantByIdHandler } = require('./handler');
+const {
+  addPlantHandler, getAllPlantsHandler, getPlantByIdHandler, editPlantByIdHandler,
+} = require('./handler');
 
 const routes = [
   {
@@ -15,6 +17,11 @@ const routes = [
     method: 'GET',
     path: '/plant/{plantId}',
     handler: getPlantByIdHandler,
+  },
+  {
+    method: 'PUT',
+    path: '/plant/{plantId}',
+    handler: editPlantByIdHandler,
   },
 ];
 

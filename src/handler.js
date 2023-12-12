@@ -74,7 +74,7 @@ const getAllPlantsHandler = async (request, h) => {
 
 const getPlantByIdHandler = async (request, h) => {
   try {
-    const plantId = request.params.plantId;
+    const { plantId } = request.params;
     const plantDetail = await Plant.findOne({ _id: plantId });
 
     if (!plantDetail) {
@@ -105,8 +105,61 @@ const getPlantByIdHandler = async (request, h) => {
   }
 };
 
+const editPlantByIdHandler = async (request, h) => {
+  try {
+    const { plantId } = request.params;
+    const {
+      common_name, scientific_name, place, sunlight, watering,
+      growth, care_level, management, description, manage_type, image,
+    } = request.payload;
+
+    const plantToUpdate = await Plant.findById(plantId);
+
+    if (!plantToUpdate) {
+      const response = h.response({
+        status: 'fail',
+        message: 'Tanaman tidak ditemukan',
+      }).code(404);
+
+      return response;
+    }
+
+    plantToUpdate.common_name = common_name;
+    plantToUpdate.scientific_name = scientific_name;
+    plantToUpdate.place = place;
+    plantToUpdate.sunlight = sunlight;
+    plantToUpdate.watering = watering;
+    plantToUpdate.growth = growth;
+    plantToUpdate.care_level = care_level;
+    plantToUpdate.management = management;
+    plantToUpdate.description = description;
+    plantToUpdate.manage_type = manage_type;
+    plantToUpdate.image = image;
+
+    const updatedPlant = await plantToUpdate.save();
+
+    const response = h.response({
+      status: 'success',
+      message: 'Tanaman berhasil diperbarui',
+      data: {
+        plant: updatedPlant,
+      },
+    }).code(200);
+
+    return response;
+  } catch (error) {
+    const response = h.response({
+      status: 'fail',
+      message: `Gagal memperbarui tanaman. Alasan: ${error.message}`,
+    }).code(500);
+
+    return response;
+  }
+};
+
 module.exports = {
   addPlantHandler,
   getAllPlantsHandler,
   getPlantByIdHandler,
+  editPlantByIdHandler,
 };

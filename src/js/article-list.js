@@ -1,6 +1,6 @@
 async function fetchArticleData() {
   try {
-    const response = await fetch('https://api.abdulfaqih.eu.org/articles');
+    const response = await fetch('https://api-article.abdulfaqih.eu.org/articles');
     const articleData = await response.json();
 
     displayArticleList(articleData);

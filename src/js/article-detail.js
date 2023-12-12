@@ -5,7 +5,7 @@ async function fetchArticleDetail() {
   const articleId = urlParams.get('id');
 
   try {
-    const response = await fetch(`https://api.abdulfaqih.eu.org/articles/${articleId}`);
+    const response = await fetch(`https://api-article.abdulfaqih.eu.org/articles/${articleId}`);
     const articleDetail = await response.json();
 
     displayArticleDetail(articleDetail.data.article);

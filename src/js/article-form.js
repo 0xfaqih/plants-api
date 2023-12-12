@@ -9,7 +9,7 @@ function submitForm() {
     image: document.getElementById('imageUrl').value,
   };
 
-  const apiUrl = 'https://api.abdulfaqih.eu.org/article';
+  const apiUrl = 'https://api-article.abdulfaqih.eu.org/article';
 
   fetch(apiUrl, {
     method: 'POST',

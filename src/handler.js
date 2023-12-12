@@ -2,8 +2,15 @@ const Article = require('./models');
 
 const addArticleHandler = async (request, h) => {
   try {
-    // eslint-disable-next-line object-curly-newline
-    const { title, content, date, author, tag, image } = request.payload;
+    const {
+      // eslint-disable-next-line max-len
+      title,
+      content,
+      date,
+      author,
+      tag,
+      image,
+    } = request.payload;
 
     const newArticle = new Article({
       title,
@@ -114,6 +121,64 @@ const getArticleByIdHandler = async (request, h) => {
   }
 };
 
+const editArticleByIdHandler = async (request, h) => {
+  try {
+    const { articleId } = request.params;
+    const {
+      // eslint-disable-next-line max-len
+      title,
+      content,
+      date,
+      author,
+      tag,
+      image,
+    } = request.payload;
+
+    const articleToUpdate = await Article.findById(articleId);
+
+    if (!articleToUpdate) {
+      const response = h
+        .response({
+          status: 'fail',
+          message: 'Artikel tidak ditemukan',
+        })
+        .code(404);
+
+      return response;
+    }
+
+    articleToUpdate.title = title;
+    articleToUpdate.content = content;
+    articleToUpdate.date = date;
+    articleToUpdate.author = author;
+    articleToUpdate.tag = tag;
+    articleToUpdate.image = image;
+
+    const updatedArticle = await articleToUpdate.save();
+
+    const response = h
+      .response({
+        status: 'success',
+        message: 'Artikel berhasil diperbarui',
+        data: {
+          article: updatedArticle,
+        },
+      })
+      .code(200);
+
+    return response;
+  } catch (error) {
+    const response = h
+      .response({
+        status: 'fail',
+        message: `Gagal memperbarui artikel. Alasan: ${error.message}`,
+      })
+      .code(500);
+
+    return response;
+  }
+};
+
 const deleteArticleByIdHandler = async (request, h) => {
   try {
     const { articleId } = request.params;
@@ -158,4 +223,5 @@ module.exports = {
   getAllArticleHandler,
   getArticleByIdHandler,
   deleteArticleByIdHandler,
+  editArticleByIdHandler,
 };

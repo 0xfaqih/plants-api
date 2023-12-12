@@ -1,5 +1,5 @@
 // eslint-disable-next-line object-curly-newline
-const { addArticleHandler, getAllArticleHandler, deleteArticleByIdHandler, getArticleByIdHandler } = require('./handler');
+const { addArticleHandler, getAllArticleHandler, deleteArticleByIdHandler, getArticleByIdHandler, editArticleByIdHandler } = require('./handler');
 
 const routes = [
   {
@@ -16,6 +16,11 @@ const routes = [
     method: 'GET',
     path: '/article/{articleId}',
     handler: getArticleByIdHandler,
+  },
+  {
+    method: 'PUT',
+    path: '/article/{articleId}',
+    handler: editArticleByIdHandler,
   },
   {
     method: 'DELETE',

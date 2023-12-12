@@ -43,7 +43,7 @@ Response:
 ### Get All Plants
 | Endpoint      | Method        | Content Type    |
 | ------------- |:-------------:|:-------------:  |
-|   /plants     | GET           | application/json|
+|   /plant     | GET           | application/json|
 
 Response: 
 ```
@@ -99,6 +99,40 @@ Response:
             "management": "Vertikal Garden",
             ...
         }
+    }
+}
+```
+### Edit Plant
+| Endpoint      | Method        | Content Type    |
+| ------------- |:-------------:|:-------------:  |
+|/plant{plantId}| PUT           | application/json|
+
+Response: 
+```
+{
+    "status": "success",
+    "message": "Tanaman berhasil diperbarui",
+    "data": {
+        "plant": {
+            "image": {
+                "regular_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/regular/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/medium/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "small_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/small/Chlorophytum_comosum_Variegatum_1zz.jpg"
+            },
+            "_id": "6577d17b4d66e1dcb6950edd",
+            "common_name": "Bukan tanaman",
+            "scientific_name": "Chlorophytum 'Bonnie'",
+            "place": [
+                "indoors"
+            ],
+            "watering": "sedang",
+            "sunlight": [
+                "redup"
+            ],
+            "growth": "tinggi",
+            "care_level": "Sedang",
+            "management": "Sedang",
+            ...
     }
 }
 ```

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Green Haven</title>
+    <link rel="icon" type="image/x-icon" href="/assets/image/Logo.svg" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/css/navbar.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/src/css/form.css" />
+    <link rel="stylesheet" href="/src/css/sidebar.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="../../index.html">
+            <img src="/assets/image/nav-logo.svg" alt="Logo" />
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- SideBar -->
+      <aside class="section-sidebar col-md-3">
+        <div class="container">
+          <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
+          <a href="article-list.html"><i class="ic card-icon material-symbols-outlined">article</i></a>
+        </div>
+      </aside>
+      <!-- End of SideBar -->
+    </header>
+
+    <main>
+      <!-- Content -->
+      <section class="section-content d-flex">
+        <div class="container col-md-9">
+          <h1 class="form-title">Form Tumbuhan</h1>
+
+          <form id="editPlantForm">
+            <!-- Content-Name -->
+            <div class="content-name d-flex flex-direction-row gap-5 mt-5">
+              <div class="name-item">
+                <label for="commonName">Nama Tumbuhan</label>
+                <input type="text" id="commonName" name="commonName" required="" />
+              </div>
+              <div class="name-item">
+                <label for="scientificName">Nama Latin</label>
+                <input type="text" id="scientificName" name="scientificName" required="" />
+              </div>
+            </div>
+            <!-- End of Content-Name -->
+
+            <!-- Content-Dropdown -->
+            <div class="content-dropdown mt-4 d-flex">
+              <div class="dropdown-item">
+                <label for="place">Tempat</label>
+                <select id="place" name="place" required="">
+                  <option value="Indoor">Indoor</option>
+                  <option value="Outdoor">Outdoor</option>
+                </select>
+              </div>
+
+              <div class="dropdown-item">
+                <label for="sunlight">Matahari</label>
+                <select id="sunlight" name="sunlight" required="">
+                  <option value="Teduh">Teduh</option>
+                  <option value="Sedang">Sedang</option>
+                  <option value="Terik">Terik</option>
+                </select>
+              </div>
+
+              <div class="dropdown-item">
+                <label for="watering">Penyiraman</label>
+                <select id="watering" name="watering" required="">
+                  <option value="Jarang">Jarang</option>
+                  <option value="Sedang">Sedang</option>
+                  <option value="Sering">Sering</option>
+                </select>
+              </div>
+
+              <div class="dropdown-item">
+                <label for="growth">Pertumbuhan</label>
+                <select id="growth" name="growth" required="">
+                  <option value="Lambat">Lambat</option>
+                  <option value="Cepat">Cepat</option>
+                </select>
+              </div>
+
+              <div class="dropdown-item">
+                <label for="careLevel">Perawatan</label>
+                <select id="careLevel" name="careLevel" required="">
+                  <option value="Mudah">Mudah</option>
+                  <option value="Sedang">Sedang</option>
+                  <option value="Susah">Susah</option>
+                </select>
+              </div>
+
+              <div class="dropdown-item">
+                <label for="management">Tipe Kelola</label>
+                <select id="management" name="management" required="">
+                  <option value="Aquaponik">Aquaponik</option>
+                  <option value="Hidroponik">Hidroponik</option>
+                  <option value="Vertikultur">Vertikultur</option>
+                  <option value="Vertikal Garden">Vertikal Garden</option>
+                  <option value="Rooftop Farming">Rooftop Gardening</option>
+                </select>
+              </div>
+            </div>
+            <!-- End of Content-Dropdown -->
+
+            <!-- Content-Desc -->
+            <div class="content-desc mt-4">
+              <div class="desc-item">
+                <label for="description">Deskripsi Tanaman</label>
+                <textarea id="description" name="description" rows="4" required=""></textarea>
+              </div>
+              <div class="desc-item mt-4">
+                <label for="manage_type">Tata Cara Menanam</label>
+                <textarea id="manage_type" name="manage_type" rows="4" required=""></textarea>
+              </div>
+            </div>
+            <!-- End of Content-Desc -->
+
+            <!-- Content-Image -->
+            <div class="content-image mt-4">
+              <div class="image-item">
+                <label for="regularUrl">Regular Image URL</label>
+                <input type="text" id="regularUrl" name="regularUrl" required="" />
+              </div>
+              <div class="image-item">
+                <label for="regularUrl">Medium Image URL</label>
+                <input type="text" id="mediumUrl" name="mediumUrl" required="" />
+              </div>
+              <div class="image-item">
+                <label for="regularUrl">Small Image URL</label>
+                <input type="text" id="smallUrl" name="smallUrl" required="" />
+              </div>
+            </div>
+            <!-- End of Content-Image -->
+          </form>
+          <br />
+
+          <button type="button" onclick="updateForm()" class="btn-primary">Submit</button>
+          <br />
+          <div id="successMessage" style="display: none; color: var(--primary-color)" class="mt-3">
+            <h1>Tanaman Berhasil Diperbarui</h1>
+          </div>
+
+          <div id="errorMessage" style="display: none; color: red" class="mt-3">
+            <h1>Tanaman Gagal Diperbarui</h1>
+          </div>
+        </div>
+      </section>
+      <!-- End Of Content -->
+    </main>
+    <script src="../js/form-edit-plant.js"></script>
+  </body>
+</html>

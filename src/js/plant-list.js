@@ -50,7 +50,7 @@ function createPlantListItem(plant) {
     deleteLink.appendChild(deleteIcon);
 
     const editLink = document.createElement('a');
-    editLink.href = '#';
+    editLink.href = `form-edit-plant.html?id=${plant.id}`;
     const editIcon = document.createElement('i');
     editIcon.className = 'ic material-symbols-outlined';
     editIcon.textContent = 'edit';

@@ -157,9 +157,43 @@ const editPlantByIdHandler = async (request, h) => {
   }
 };
 
+const deletePlantByIdHandler = async (request, h) => {
+  try {
+    const { plantId } = request.params;
+    const deletedPlant = await Plant.findByIdAndDelete(plantId);
+
+    if (!deletedPlant) {
+      const notFoundResponse = h.response({
+        status: 'fail',
+        message: 'Tanaman tidak ditemukan',
+      }).code(404);
+
+      return notFoundResponse;
+    }
+
+    const successResponse = h.response({
+      status: 'success',
+      message: 'Tanaman berhasil dihapus',
+      data: {
+        plant: deletedPlant,
+      },
+    }).code(200);
+
+    return successResponse;
+  } catch (error) {
+    const response = h.response({
+      status: 'fail',
+      message: `Gagal menghapus tanaman. Alasan: ${error.message}`,
+    }).code(500);
+
+    return response;
+  }
+};
+
 module.exports = {
   addPlantHandler,
   getAllPlantsHandler,
   getPlantByIdHandler,
   editPlantByIdHandler,
+  deletePlantByIdHandler,
 };

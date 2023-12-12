@@ -1,5 +1,9 @@
 const {
-  addPlantHandler, getAllPlantsHandler, getPlantByIdHandler, editPlantByIdHandler,
+  addPlantHandler,
+  getAllPlantsHandler,
+  getPlantByIdHandler,
+  editPlantByIdHandler,
+  deletePlantByIdHandler,
 } = require('./handler');
 
 const routes = [
@@ -22,6 +26,11 @@ const routes = [
     method: 'PUT',
     path: '/plant/{plantId}',
     handler: editPlantByIdHandler,
+  },
+  {
+    method: 'DELETE',
+    path: '/plant/{plantId}',
+    handler: deletePlantByIdHandler,
   },
 ];
 

@@ -41,7 +41,7 @@
 
     /* H2 */
     font-family: Poppins;
-    font-size: 48px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -55,7 +55,7 @@
 
   /* gambar */
 .section-detail .article .img-article img {
-    max-width: 935px;
+    max-width: 650px;
     width: 100%;
     border-radius: 10px;
 }

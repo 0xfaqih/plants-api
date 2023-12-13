@@ -2,18 +2,20 @@
     position: absolute;
     align-items: center;
     flex-shrink: 0;
-    width: 150px;
+    width: 100px;
     height: 100vh;
-    min-height: 1350px;
+    min-height: 1800;
     background: var(--background-color);
 }
 .section-sidebar .ic {
-    font-size: 64px;
-    max-width: 64px;
+    font-size: 48px;
+    max-width: 58px;
     color: var(--primary-color);
 
     position: relative;
-    margin: 30px;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 5px;
 }
 
 .section-sidebar .ic:hover {

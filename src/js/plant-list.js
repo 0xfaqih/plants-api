@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
 async function fetchPlantData() {
     try {
         const response = await fetch('https://apiplant.abdulfaqih.eu.org/plant');
@@ -44,9 +46,9 @@ function createPlantListItem(plant) {
 
     const deleteLink = document.createElement('a');
     deleteLink.href = '#';
-    deleteLink.setAttribute('data-plant-id', plant.id); 
+    deleteLink.setAttribute('data-plant-id', plant.id);
     deleteLink.addEventListener('click', handleDeleteClick);
-    
+
     const deleteIcon = document.createElement('i');
     deleteIcon.className = 'ic material-symbols-outlined';
     deleteIcon.textContent = 'delete';
@@ -93,14 +95,14 @@ function displayPlantList(apiResponse) {
 
 function handleDeleteClick(event) {
     event.preventDefault();
-  
+
     const plantId = event.currentTarget.getAttribute('data-plant-id');
-  
+
     if (confirm('Apakah Anda yakin ingin menghapus tanaman ini?')) {
       deletePlantById(plantId);
     }
   }
-  
+
   async function deletePlantById(plantId) {
     try {
       const response = await fetch(`https://apiplant.abdulfaqih.eu.org/plant/${plantId}`, {
@@ -109,9 +111,9 @@ function handleDeleteClick(event) {
           'Content-Type': 'application/json',
         },
       });
-  
+
       const responseData = await response.json();
-  
+
       if (response.ok) {
         console.log('Tanaman berhasil dihapus:', responseData);
       } else {

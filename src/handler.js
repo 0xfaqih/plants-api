@@ -44,9 +44,25 @@ const addPlantHandler = async (request, h) => {
 
 const getAllPlantsHandler = async (request, h) => {
   try {
-    const allPlants = await Plant.find();
+    const {
+      place, sunlight, watering,
+      growth, care_level, management,
+    } = request.query;
 
-    const simplifiedPlants = allPlants.map((plant) => ({
+    const query = {
+      place,
+      sunlight,
+      watering,
+      growth,
+      care_level,
+      management,
+    };
+
+    Object.keys(query).forEach((key) => (query[key] === undefined) && delete query[key]);
+
+    const filteredPlants = await Plant.find(query);
+
+    const simplifiedPlants = filteredPlants.map((plant) => ({
       id: plant.id,
       common_name: plant.common_name,
       scientific_name: plant.scientific_name,
@@ -55,7 +71,7 @@ const getAllPlantsHandler = async (request, h) => {
 
     const response = h.response({
       status: 'success',
-      message: 'Berhasil mendapatkan semua tanaman',
+      message: 'Berhasil mendapatkan tanaman berdasarkan filter',
       data: {
         plants: simplifiedPlants,
       },

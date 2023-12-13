@@ -1,12 +1,10 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
 async function fetchArticleData() {
   try {
     const response = await fetch('https://api-article.abdulfaqih.eu.org/articles');
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
     const articleData = await response.json();
+
     displayArticleList(articleData);
   } catch (error) {
     console.error('Error fetching article data:', error);
@@ -20,7 +18,6 @@ function createArticleListItem(article) {
   const articleDiv = document.createElement('div');
   articleDiv.className = 'article';
 
-  // Add image
   const imgArticle = document.createElement('img');
   imgArticle.src = article.image; // Replace with the actual image field from your API response
   imgArticle.alt = `Image for ${article.title}`;
@@ -52,7 +49,7 @@ function createArticleListItem(article) {
   deleteLink.appendChild(deleteIcon);
 
   const editLink = document.createElement('a');
-  editLink.href = `edit-article.html?id=${article.id}`;
+  editLink.href = `form-edit-article.html?id=${article.id}`;
   const editIcon = document.createElement('i');
   editIcon.className = 'ic material-symbols-outlined';
   editIcon.textContent = 'edit';
@@ -86,10 +83,37 @@ function displayArticleList(apiResponse) {
   articleListElement.appendChild(articleList); // Append the ul to the existing articleListElement
 }
 
-function handleDeleteClick(event) {
+async function handleDeleteClick(event) {
+  event.preventDefault();
+
   const articleId = event.currentTarget.getAttribute('data-article-id');
-  // Add logic for handling delete action
-  console.log(`Delete article with ID ${articleId}`);
+
+  if (confirm('Apakah Anda yakin ingin menghapus artikel ini?')) {
+    await deleteArticleById(articleId);
+  }
+}
+
+async function deleteArticleById(articleId) {
+  try {
+    const response = await fetch(`https://api-article.abdulfaqih.eu.org/article/${articleId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+      console.log('Artikel berhasil dihapus:', responseData);
+      // You might want to refresh the article list after deletion
+      fetchArticleData();
+    } else {
+      console.error('Gagal menghapus artikel:', responseData);
+    }
+  } catch (error) {
+    console.error('Error deleting article:', error);
+  }
 }
 
 window.onload = fetchArticleData;

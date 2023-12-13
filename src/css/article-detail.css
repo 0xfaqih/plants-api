@@ -35,6 +35,10 @@
 .section-detail .article {
     gap: 35px;
 }
+
+.section-detail .article-content {
+    text-align: justify;
+}
   /* section a */
 .section-detail .article H1 {
     color: var(--T1, #000);

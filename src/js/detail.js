@@ -17,7 +17,7 @@ function displayPlantDetail(plant) {
 
   if (plant) {
     const detailHTML = `
-            <div class="detail-container mx-auto">
+            <div class="detail-container">
                 <div class="detail-inner">
                     <div class="detail-inner-title">
                         <h2> ${plant.common_name}</h2>

@@ -104,28 +104,28 @@
 
 @media (max-width: 1440px) { 
     .section-content .head-title {
-        margin-left: 40px;
+        margin-left: 20px;
     }
 }
 
 @media (max-width: 768px) { 
     .section-content .head-title {
-        margin-left: 40px;
+        margin-left: 30px;
     }
+
     .section-content .title-article {
         font-size: 16px;
     }
 
     .section-content .article {
-        flex-direction: column;
         gap: 16px;
-        align-items: flex-end;
     }
 }
 
 @media (max-width: 576px) {
     .section-content .head-title{
         flex-direction: column;
+        margin-left: 0px;
     }
     .section-content .title-article {
         font-size: 12px;
@@ -135,6 +135,8 @@
         flex-direction: column;
     }
     .section-content .article {
+        flex-direction: column;
         align-items: center;
+        padding: 20px;
     }
 }

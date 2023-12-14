@@ -32,17 +32,23 @@
       <!-- End of Navbar -->
 
       <!-- SideBar -->
-      <aside class="section-sidebar col-md-2">
-        <div class="container">
-          <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
-          <a href="article-list.html"><i class="ic active card-icon material-symbols-outlined">article</i></a>
+      <aside class="section-sidebar">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">></button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column">
+            <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
+            <a href="article-list.html"><i class="ic active card-icon material-symbols-outlined">article</i></a>
+          </div>
         </div>
       </aside>
       <!-- End of SideBar -->
     </header>
     <main>
       <section class="section-detail d-flex">
-        <div class="container col-md-10">
+        <div class="container">
           <div class="head-title mb-4">
             <h1 class="title">Detail Artikel</h1>
             <a href="article-list.html" class="btn-primary">Kembali</a>
@@ -54,5 +60,6 @@
       </section>
     </main>
   </body>
+  <script src="/assets/js/bootstrap.js"></script>
   <script src="/src/js/article-detail.js"></script>
 </html>

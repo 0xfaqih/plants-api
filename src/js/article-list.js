@@ -18,11 +18,13 @@ function createArticleListItem(article) {
   const articleDiv = document.createElement('div');
   articleDiv.className = 'article';
 
+  const titleWrapperDiv = document.createElement('div');
+  titleWrapperDiv.className = 'title-wrapper';
+
   const imgArticle = document.createElement('img');
   imgArticle.src = article.image; // Replace with the actual image field from your API response
   imgArticle.alt = `Image for ${article.title}`;
   imgArticle.className = 'img-article';
-  articleDiv.appendChild(imgArticle);
 
   const titleArticleAnchor = document.createElement('a');
   titleArticleAnchor.href = `article-detail.html?id=${article.id}`;
@@ -31,9 +33,10 @@ function createArticleListItem(article) {
   titleArticleHeading.className = 'title-article';
   titleArticleHeading.textContent = article.title;
 
-  titleArticleAnchor.appendChild(titleArticleHeading);
+  titleWrapperDiv.appendChild(imgArticle);
+  titleWrapperDiv.appendChild(titleArticleHeading);
 
-  articleDiv.appendChild(titleArticleAnchor);
+  titleArticleAnchor.appendChild(titleWrapperDiv);
 
   const iconArticleDiv = document.createElement('div');
   iconArticleDiv.className = 'icon-article';
@@ -58,6 +61,7 @@ function createArticleListItem(article) {
   iconArticleDiv.appendChild(deleteLink);
   iconArticleDiv.appendChild(editLink);
 
+  articleDiv.appendChild(titleArticleAnchor);
   articleDiv.appendChild(iconArticleDiv);
 
   listItem.appendChild(articleDiv);

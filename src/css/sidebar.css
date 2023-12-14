@@ -1,15 +1,13 @@
-.section-sidebar {
-    position: absolute;
-    align-items: center;
-    flex-shrink: 0;
-    width: 100px;
+.section-sidebar .offcanvas{
+    width: 15%;
     height: 100vh;
-    min-height: 1800;
-    background: var(--background-color);
+    align-items: center;
+    background: var(--white-color);
+    border: 0px;
 }
 .section-sidebar .ic {
-    font-size: 48px;
-    max-width: 58px;
+    font-size: 24px;
+    max-width: 34px;
     color: var(--primary-color);
 
     position: relative;
@@ -22,5 +20,41 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     border-radius: 10px;
+}
+
+.section-sidebar .btn {
+    padding: 10px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.section-sidebar .button {
+    color: var(--primary-color);
+}
+
+@media (max-width: 1920px) {
+    .section-sidebar .offcanvas {
+        width: 5%;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .section-sidebar .offcanvas {
+        width: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-sidebar .offcanvas {
+        width: 8%;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .section-sidebar .offcanvas {
+        width: 13%;
+    }
+    
 }
 

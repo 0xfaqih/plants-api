@@ -3,7 +3,17 @@
 ## Base URL
 The base URL for all endpoints is: https://apiplant.abdulfaqih.eu.org/
 
-### Add a plant
+
+- [Add a plant](#Add-a-plant)
+- [Get All Plants](#Get-AllPlants)
+- [Get Plant by ID](#Get-Plant-by-ID)
+- [Edit Plant](#Edit-Plant)
+- [Delete A Plant](#Delete-A-Plant)
+- [Get a list of plants based on specific filters](#Get-a-list-of-plants-based-on-specific-filters)
+
+---
+
+## Add a plant
 | Endpoint      | Method        | Content Type    |
 | ------------- |:-------------:|:-------------:  |
 |   /plant      | POST          | application/json|
@@ -33,7 +43,7 @@ Body:
    }
 }
 ```
-All parameters are **required** and have **String** data type
+> All parameters are **required** and have **String** data type
 
 Response: 
 ```
@@ -66,8 +76,8 @@ Response:
     }
 }
 ```
-
-### Get All Plants
+___
+## Get All Plants
 | Endpoint      | Method        | Content Type    |
 | ------------- |:-------------:|:-------------:  |
 |   /plant     | GET           | application/json|
@@ -94,8 +104,8 @@ Response:
     }
 }
 ```
-
-### Get Plant by ID
+___
+## Get Plant by ID
 | Endpoint        | Method        | Content Type    |
 | -------------   |:-------------:|:-------------:  |
 | /plant/{plantId}| GET           | application/json|
@@ -129,11 +139,38 @@ Response:
     }
 }
 ```
-### Edit Plant
+___
+## Edit Plant
 | Endpoint      | Method        | Content Type    |
 | ------------- |:-------------:|:-------------:  |
 |/plant{plantId}| PUT           | application/json|
 
+
+Body: 
+```
+{
+
+   "scientific_name": "Nama latin",
+   "common_name": "Nama umum",
+   "place": [
+       "tempatnya"
+   ],
+   "sunlight": [
+       "penyinaran"
+   ],
+   "watering": "penyiraman",
+   "growth": "pertumbuhan",
+   "care_level": "tingkat kesulitan perawatan",
+   "management": "Tipe urban farming",
+   "description": "Deskripsi tanaman",
+   "manage_type": "Cara mengelola tanaman",
+   "image": {
+       "regular_url": "url regular",
+       "medium_url": "url medium",
+       "small_url": "url small"
+   }
+}
+```
 Response: 
 ```
 {
@@ -162,4 +199,60 @@ Response:
             ...
     }
 }
+```
+## Delete A Plant
+| Endpoint      | Method        | Content Type    |
+| ------------- |:-------------:|:-------------:  |
+|/plant{plantId}| DELETE        | application/json|
+
+Response:
+```
+{
+    "status": "success",
+    "message": "Tanaman berhasil dihapus",
+    "data": {
+        "plant": {
+            "image": {
+                "regular_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/regular/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "medium_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/medium/Chlorophytum_comosum_Variegatum_1zz.jpg",
+                "small_url": "https://perenual.com/storage/species_image/1846_chlorophytum_bonnie/small/Chlorophytum_comosum_Variegatum_1zz.jpg"
+            },
+            "_id": "657bfc8e0842f262df6768b9",
+            "common_name": "Bukan tanaman",
+            "scientific_name": "Chlorophytum 'Bonnie'",
+            ...
+        }
+    }
+
+```
+
+## Get a list of plants based on specific filters
+| Endpoint      | Method        | Content Type    |
+| ------------- |:-------------:|:-------------:  |
+|   /plant      | GET| application/json|
+
+> Query parameter
+> -   `place` (string, opsional)
+> -   `sunlight` (string, opsional)
+> -   `watering` (string, opsional)
+> -   `growth` (string, opsional)
+> -   `care_level` (string, opsional)
+> -   `management` (string, opsional)
+
+Response:
+```
+{
+  "status": "success",
+  "message": "Berhasil mendapatkan tanaman berdasarkan filter",
+  "data": {
+    "plants": [
+      {
+        "id": 1,
+        "common_name": "Nama Umum Tanaman 1",
+        "scientific_name": "Nama Ilmiah Tanaman 1",
+        ...
+      },
+  }
+}
+
 ```

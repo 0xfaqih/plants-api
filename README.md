@@ -5,7 +5,7 @@ The base URL for all endpoints is: https://apiplant.abdulfaqih.eu.org/
 
 
 - [Add a plant](#Add-a-plant)
-- [Get All Plants](#Get-AllPlants)
+- [Get All Plants](#Get-All-Plants)
 - [Get Plant by ID](#Get-Plant-by-ID)
 - [Edit Plant](#Edit-Plant)
 - [Delete A Plant](#Delete-A-Plant)

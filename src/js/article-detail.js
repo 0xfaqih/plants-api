@@ -26,7 +26,7 @@ function displayArticleDetail(article) {
           <div class="img-article">
           <img src="${article.image}" alt="${article.title}" srcset="">
             <div class="data-article">
-              <p class="tanggal">${article.date}</p>
+              <p class="tanggal">${new Date(article.date).toLocaleDateString()}</p>
               <p class="penulis">${article.author}</p>
               <p class="tag">${article.tag}</p>
             </div>

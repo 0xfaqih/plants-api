@@ -12,65 +12,66 @@ async function fetchPlantData() {
 }
 
 function createPlantListItem(plant) {
-    const listItem = document.createElement('li');
-    listItem.className = 'item-plant';
+  const listItem = document.createElement('li');
+  listItem.className = 'item-plant';
 
-    const plantDiv = document.createElement('div');
-    plantDiv.className = 'plant';
+  const plantContainer = document.createElement('div');
+  plantContainer.className = 'plant-container'; // You can adjust the class name as needed
 
-    const imgElement = document.createElement('img');
-    imgElement.src = plant.image.regular_url;
-    imgElement.alt = `${plant.common_name} image`;
-    imgElement.className = 'img-plant';
+  const imgElement = document.createElement('img');
+  imgElement.src = plant.image.regular_url;
+  imgElement.alt = `${plant.common_name} image`;
+  imgElement.className = 'img-plant';
 
-    const namePlantDiv = document.createElement('div');
-    namePlantDiv.className = 'name-plant';
+  const namePlantDiv = document.createElement('div');
+  namePlantDiv.className = 'name-plant';
 
-    const commonNameAnchor = document.createElement('a');
-    commonNameAnchor.href = `detail.html?id=${plant.id}`; // Adjust the link as needed
-    const commonNameHeading = document.createElement('h3');
-    commonNameHeading.className = 'commonName';
-    commonNameHeading.id = 'name';
-    commonNameHeading.textContent = plant.common_name;
-    commonNameAnchor.appendChild(commonNameHeading);
+  const commonNameAnchor = document.createElement('a');
+  commonNameAnchor.href = `detail.html?id=${plant.id}`;
 
-    const scientificNameParagraph = document.createElement('p');
-    scientificNameParagraph.className = 'scientificName';
-    scientificNameParagraph.textContent = plant.scientific_name;
+  const commonNameHeading = document.createElement('h3');
+  commonNameHeading.className = 'commonName';
+  commonNameHeading.id = 'name';
+  commonNameHeading.textContent = plant.common_name;
+  commonNameAnchor.appendChild(commonNameHeading);
 
-    namePlantDiv.appendChild(commonNameAnchor);
-    namePlantDiv.appendChild(scientificNameParagraph);
+  const scientificNameParagraph = document.createElement('p');
+  scientificNameParagraph.className = 'scientificName';
+  scientificNameParagraph.textContent = plant.scientific_name;
 
-    const iconPlantDiv = document.createElement('div');
-    iconPlantDiv.className = 'icon-plant';
+  namePlantDiv.appendChild(commonNameAnchor);
+  namePlantDiv.appendChild(scientificNameParagraph);
 
-    const deleteLink = document.createElement('a');
-    deleteLink.href = '#';
-    deleteLink.setAttribute('data-plant-id', plant.id);
-    deleteLink.addEventListener('click', handleDeleteClick);
+  plantContainer.appendChild(imgElement);
+  plantContainer.appendChild(namePlantDiv);
 
-    const deleteIcon = document.createElement('i');
-    deleteIcon.className = 'ic material-symbols-outlined';
-    deleteIcon.textContent = 'delete';
-    deleteLink.appendChild(deleteIcon);
+  const iconPlantDiv = document.createElement('div');
+  iconPlantDiv.className = 'icon-plant';
 
-    const editLink = document.createElement('a');
-    editLink.href = `form-edit-plant.html?id=${plant.id}`;
-    const editIcon = document.createElement('i');
-    editIcon.className = 'ic material-symbols-outlined';
-    editIcon.textContent = 'edit';
-    editLink.appendChild(editIcon);
+  const deleteLink = document.createElement('a');
+  deleteLink.href = '#';
+  deleteLink.setAttribute('data-plant-id', plant.id);
+  deleteLink.addEventListener('click', handleDeleteClick);
 
-    iconPlantDiv.appendChild(deleteLink);
-    iconPlantDiv.appendChild(editLink);
+  const deleteIcon = document.createElement('i');
+  deleteIcon.className = 'ic material-symbols-outlined';
+  deleteIcon.textContent = 'delete';
+  deleteLink.appendChild(deleteIcon);
 
-    plantDiv.appendChild(imgElement);
-    plantDiv.appendChild(namePlantDiv);
-    plantDiv.appendChild(iconPlantDiv);
+  const editLink = document.createElement('a');
+  editLink.href = `form-edit-plant.html?id=${plant.id}`;
+  const editIcon = document.createElement('i');
+  editIcon.className = 'ic material-symbols-outlined';
+  editIcon.textContent = 'edit';
+  editLink.appendChild(editIcon);
 
-    listItem.appendChild(plantDiv);
+  iconPlantDiv.appendChild(deleteLink);
+  iconPlantDiv.appendChild(editLink);
 
-    return listItem;
+  listItem.appendChild(plantContainer);
+  listItem.appendChild(iconPlantDiv);
+
+  return listItem;
 }
 
 function displayPlantList(apiResponse) {

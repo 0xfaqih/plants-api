@@ -142,3 +142,13 @@
 .section-content button {
     border: 0;
 }
+
+@media (max-width: 768px) {
+    .content-name {
+        flex-direction: column;
+    }
+
+    .content-image {
+        flex-direction: column;
+    }
+}

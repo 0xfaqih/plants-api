@@ -8,6 +8,33 @@ The base URL for all endpoints is: https://apiplant.abdulfaqih.eu.org/
 | ------------- |:-------------:|:-------------:  |
 |   /plant      | POST          | application/json|
 
+Body: 
+```
+{
+
+   "scientific_name": "Nama latin",
+   "common_name": "Nama umum",
+   "place": [
+       "tempatnya"
+   ],
+   "sunlight": [
+       "penyinaran"
+   ],
+   "watering": "penyiraman",
+   "growth": "pertumbuhan",
+   "care_level": "tingkat kesulitan perawatan",
+   "management": "Tipe urban farming",
+   "description": "Deskripsi tanaman",
+   "manage_type": "Cara mengelola tanaman",
+   "image": {
+       "regular_url": "url regular",
+       "medium_url": "url medium",
+       "small_url": "url small"
+   }
+}
+```
+All parameters are **required** and have **String** data type
+
 Response: 
 ```
 {

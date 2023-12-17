@@ -4,11 +4,11 @@
 The base URL for all endpoints is: https://api-article.abdulfaqih.eu.org
 
 
-- [Add a Article](#Add-a-article)
+- [Add an Article](#Add-a-article)
 - [Get All Articles](#Get-All-Articles)
 - [Get Article by ID](#Get-Article-by-ID)
 - [Edit Article](#Edit-Article)
-- [Delete A Article](#Delete-A-Article)
+- [Delete an Article](#Delete-A-Article)
 
 ---
 

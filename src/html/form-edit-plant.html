@@ -33,10 +33,16 @@
       <!-- End of Navbar -->
 
       <!-- SideBar -->
-      <aside class="section-sidebar col-md-3">
-        <div class="container">
-          <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
-          <a href="article-list.html"><i class="ic card-icon material-symbols-outlined">article</i></a>
+      <aside class="section-sidebar">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">></button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column">
+            <a href="plant-list.html"><i class="ic active card-icon material-symbols-outlined">potted_plant</i></a>
+            <a href="article-detail.html"><i class="ic card-icon material-symbols-outlined">article</i></a>
+          </div>
         </div>
       </aside>
       <!-- End of SideBar -->
@@ -45,7 +51,7 @@
     <main>
       <!-- Content -->
       <section class="section-content d-flex">
-        <div class="container col-md-9">
+        <div class="container">
           <h1 class="form-title">Form Tumbuhan</h1>
 
           <form id="editPlantForm">
@@ -165,6 +171,7 @@
       </section>
       <!-- End Of Content -->
     </main>
+    <script src="/assets/js/bootstrap.js"></script>
     <script src="../js/form-edit-plant.js"></script>
   </body>
 </html>

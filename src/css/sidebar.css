@@ -1,24 +1,68 @@
-.section-sidebar {
-    position: absolute;
+.section-sidebar .offcanvas{
+    width: 15%;
+    height: 80vh;
     align-items: center;
-    flex-shrink: 0;
-    width: 150px;
-    height: 100vh;
-    min-height: 1350px;
-    background: var(--background-color);
+    background : linear-gradient(0deg, rgba(233, 238, 207, 0.80) 50%, rgba(233, 238, 207, 0.30) 100%), #FFF;;
+    border: 0px;
+    border-radius: 0px 0px 80px 0px;
 }
 .section-sidebar .ic {
-    font-size: 64px;
-    max-width: 64px;
+    font-size: 24px;
+    max-width: 34px;
     color: var(--primary-color);
 
     position: relative;
-    margin: 30px;
+    margin: 10px;
+    margin-top: 40px;
+    padding: 5px;
 }
 
 .section-sidebar .ic:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
     border-radius: 10px;
+}
+
+.section-sidebar .btn {
+    padding: 10px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.section-sidebar .button {
+    color: var(--primary-color);
+}
+
+@media (min-width: 1920px){
+    .section-sidebar .ic {
+        font-size: 64px;
+        max-width: 74px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .section-sidebar .offcanvas {
+        width: 5%;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .section-sidebar .offcanvas {
+        width: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-sidebar .offcanvas {
+        width: 8%;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .section-sidebar .offcanvas {
+        width: 13%;
+    }
+    
 }
 

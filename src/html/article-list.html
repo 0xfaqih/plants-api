@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/src/css/navbar.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/src/css/sidebar.css" />
-    <link rel="stylesheet" href="/src/css/plant-list.css" />
+    <link rel="stylesheet" href="/src/css/article-list.css" />
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,10 +33,16 @@
       <!-- End of Navbar -->
 
       <!-- SideBar -->
-      <aside class="section-sidebar col-md-3">
-        <div class="container">
-          <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
-          <a href="#"><i class="ic active card-icon material-symbols-outlined">article</i></a>
+      <aside class="section-sidebar">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">></button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column">
+            <a href="plant-list.html"><i class="ic card-icon material-symbols-outlined">potted_plant</i></a>
+            <a href="#"><i class="ic active card-icon material-symbols-outlined">article</i></a>
+          </div>
         </div>
       </aside>
       <!-- End of SideBar -->
@@ -45,19 +51,18 @@
     <main>
       <!-- Content -->
       <section class="section-content d-flex">
-        <div class="container col-md-9" id="">
+        <div class="container" id="">
           <div class="head-title mb-4">
             <h1 class="title">List Artikel</h1>
             <a href="article-form.html" class="btn-primary">Buat</a>
           </div>
-          <div class="content">
-            <ul class="content-item" id="articleList">
-              <!-- article List -->
-            </ul>
+          <div class="content" id="articleList">
+            <!-- article List -->
           </div>
         </div>
       </section>
     </main>
     <script src="/src/js/article-list.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
   </body>
 </html>

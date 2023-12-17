@@ -18,3 +18,9 @@
 .navbar .navbar-brand {
     max-width: 204px;
 }
+
+@media (max-width: 576px) {
+    .navbar .navbar-brand {
+        padding-left: 90px;
+    }
+}

@@ -19,36 +19,26 @@ function displayArticleDetail(article) {
 
   if (article) {
     const detailHTML = `
-            <div class="detail-container mx-auto">
-                <div class="detail-inner">
-                    <div class="detail-inner-title">
-                        <h2> ${article.title}</h2>
-                        <h4>${article.author}</h4>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-body-text d-flex flex-row p-2">
-                                <img src="../../assets/image/ic-calendar.svg">
-                                <p class="my-auto mx-3">${article.date}</p>
-                            </div>
-                            <div class="card-body-text d-flex flex-row p-2">
-                                <img src="../../assets/image/ic-tag.svg">
-                                <p class="my-auto mx-3"> ${article.tag}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="detail-inner-img">
-                    <img src="${article.image}" alt="${article.title}" srcset="">
-                </div>
+    <div class="container">
+      <div class="content mx-auto d-flex flex-column">
+        <div class="article d-flex flex-column align-items-center">
+          <h1 class="article-title"> ${article.title}</h1>
+          <div class="img-article">
+          <img src="${article.image}" alt="${article.title}" srcset="">
+            <div class="data-article">
+              <p class="tanggal">${new Date(article.date).toLocaleDateString()}</p>
+              <p class="penulis">${article.author}</p>
+              <p class="tag">${article.tag}</p>
             </div>
-            <div class="detail-desc-container">
-                <div class="desc-article">
-                    <h3>Konten Artikel</h3>
-                    <p>${article.content}</p>
-                </div>
+          </div>
+
+          <div class="article-content">
+            <p>${article.content}</p>
             </div>
-            <!-- Add more details as needed -->
+          </div>
+          </div>
+          </div>
+          
         `;
     articleDetailElement.innerHTML = detailHTML;
   } else {

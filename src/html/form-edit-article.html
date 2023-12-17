@@ -10,8 +10,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/src/css/navbar.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/src/css/form-article.css" />
     <link rel="stylesheet" href="/src/css/sidebar.css" />
-    <link rel="stylesheet" href="/src/css/article-detail.css" />
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +19,7 @@
     <!-- Icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
+
   <body>
     <header>
       <!-- Navbar -->
@@ -46,20 +47,62 @@
       </aside>
       <!-- End of SideBar -->
     </header>
+
     <main>
-      <section class="section-detail d-flex">
+      <!-- Content -->
+      <section class="section-content d-flex">
         <div class="container">
-          <div class="head-title mb-4">
-            <h1 class="title">Detail Artikel</h1>
-            <a href="article-list.html" class="btn-primary">Kembali</a>
+          <h1 class="form-title">Form Artikel</h1>
+
+          <form id="articleForm">
+            <div class="article-content mt-5">
+              <div class="content-name">
+                <label for="title">Judul Artikel</label>
+                <input type="text" id="title" name="title" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="dateArticle">Tanggal Artikel</label>
+                <input type="date" id="dateArticle" name="dateArticle" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="author">Penulis Artikel</label>
+                <input type="text" id="author" name="author" required="" />
+              </div>
+
+              <div class="content-name">
+                <label for="tag">Tag Artikel</label>
+                <input type="text" id="tag" name="tag" required="" />
+              </div>
+
+              <div class="content-image">
+                <label for="umageUrl">Regular Image URL</label>
+                <input type="url" id="imageUrl" name="imageUrl" required="" />
+              </div>
+            </div>
+
+            <div class="desc-item mt-5">
+              <label for="content">Konten Artikel</label>
+              <textarea id="description" name="content" rows="4" required=""></textarea>
+            </div>
+          </form>
+          <br />
+
+          <button type="button" onclick="updateForm()" class="btn-primary">Submit</button><br />
+
+          <div id="successMessage" style="display: none; color: var(--primary-color)" class="mt-3">
+            <h1>Sukses!</h1>
           </div>
-          <div id="articleDetail">
-            <!-- detail plant -->
+
+          <div id="errorMessage" style="display: none; color: red" class="mt-3">
+            <h1>Gagal</h1>
           </div>
         </div>
       </section>
+      <!-- End Of Content -->
     </main>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="../js/form-edit-article.js"></script>
   </body>
-  <script src="/assets/js/bootstrap.js"></script>
-  <script src="/src/js/article-detail.js"></script>
 </html>

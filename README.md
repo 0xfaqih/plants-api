@@ -1,7 +1,7 @@
 # Information on the API endpoints
 
 ## Base URL
-The base URL for all endpoints is: [https://dash.abdulfaqih.eu.org/](https://dash.abdulfaqih.eu.org/)
+The base URL for all endpoints is: https://api-article.abdulfaqih.eu.org
 
 
 - [Add a Article](#Add-a-article)

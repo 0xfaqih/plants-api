@@ -1,103 +1,20 @@
 # Information on the API endpoints
 
 ## Base URL
-The base URL for all endpoints is: https://api.abdulfaqih.eu.org/
+This repository serves as the backend for managing plant and article data. The base URL for all endpoints is [https://api.abdulfaqih.eu.org/](https://dash.abdulfaqih.eu.org/).
 
-### Add a plant
-| Endpoint      | Method        | Content Type    |
-| ------------- |:-------------:|:-------------:  |
-|   /plant      | POST          | application/json|
+![image](https://github.com/0xfaqih/plants-api/assets/127376797/185f4474-e562-4020-b9f5-fbea46af4c6c)
 
-Response: 
-```
-{
-    "status": "success",
-    "message": "Tanaman berhasil ditambahkan",
-    "data": {
-        "plant": {
-            "common_name": "Nama Umum Tanaman",
-            "scientific_name": [
-                "Nama Ilmiah Tanaman"
-            ],
-            "cycle": "Perennial",
-            "propagation": [
-                "Cutting",
-                "Grafting Propagation",
-                "Layering Propagation",
-                "Seed Propagation",
-                "Air Layering Propagation",
-                "Tissue Culture"
-            ...
-        }
-    }
-}
-```
 
-### Get All Plants
-| Endpoint      | Method        | Content Type    |
-| ------------- |:-------------:|:-------------:  |
-|   /plants     | GET           | application/json|
+## Plant API
 
-Response: 
-```
-{
-    "status": "success",
-    "message": "Berhasil mendapatkan semua tanaman",
-    "data": {
-        "plants": [
-            {
-                "id": "656286fb6327d9b964c025eb",
-                "common_name": "NamaUmumTanaman",
-                "scientific_name": [
-                    "Nama Ilmiah Tanaman"
-                ],
-                "image": {
-                    "regular_url": "URL Regular",
-                    "medium_url": "URL Medium",
-                    "small_url": "URL Small"
-                }
-            },
-            {
-                "id": "65631bbf998486cfc27fc167",
-                "common_name": "Nama Umum Tanaman",
-                "scientific_name": [
-                    "Nama Ilmiah Tanaman"
-                ],
-                "image": {
-                    "regular_url": "URL Regular",
-                    "medium_url": "URL Medium",
-                    "small_url": "URL Small"
-                }
-            }
-        ]
-    }
-}
-```
+For detailed documentation on the Plant API, please refer to the [Plant API README](https://github.com/0xfaqih/plants-api/blob/main/README.md).
+![image](https://github.com/0xfaqih/plants-api/assets/127376797/07273816-4f22-4310-a94e-1a89ac4bf3f2)
 
-### Get Plant by ID
-| Endpoint        | Method        | Content Type    |
-| -------------   |:-------------:|:-------------:  |
-| /plant/{plantId}| GET           | application/json|
 
-Response: 
-```
-{
-    "status": "success",
-    "message": "Berhasil mendapatkan detail tanaman",
-    "data": {
-        "plant": {
-            "image": {
-                "regular_url": "URL Regular",
-                "medium_url": "URL Medium",
-                "small_url": "URL Small"
-            },
-            "_id": "656286fb6327d9b964c025eb",
-            "common_name": "NamaUmumTanaman",
-            "scientific_name": [
-                "Nama Ilmiah Tanaman"
-            ],
-            ...
-        }
-    }
-}
-```
+## Article API
+
+For detailed documentation on the Article API, please refer to the [Article API README](https://github.com/0xfaqih/plants-api/blob/article-api/README.md).
+![image](https://github.com/0xfaqih/plants-api/assets/127376797/1a9a43b8-c536-481a-8581-6555f2c0fe3c)
+
+

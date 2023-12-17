@@ -114,6 +114,7 @@ function handleDeleteClick(event) {
   
       if (response.ok) {
         console.log('Tanaman berhasil dihapus:', responseData);
+        location.reload();
       } else {
         console.error('Gagal menghapus tanaman:', responseData);
       }
